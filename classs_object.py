@@ -48,6 +48,8 @@ class UrTube:
                                 print(i, end=' ')
                                 time.sleep(1)
                             print('Конец видео')
+        else:
+            print("Войдите в аккаунт, чтобы смотреть видео")
 
 
     def __str__(self):
