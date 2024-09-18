@@ -26,8 +26,9 @@ class UrTube:
         self.current_user = None
 
     def add(self, *args):
-        for movie in args:
-            self.videos.append(movie)
+        if args not in self.videos:
+            for movie in args:
+                self.videos.append(movie)
 
     def get_videos(self, text):
         list_movie = []
