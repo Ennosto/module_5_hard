@@ -6,9 +6,9 @@ class UrTube:
     videos = []
     current_user = None
 
-    def log_in(self, login, password):
+    def log_in(self, nickname, password):
         for user in self.users:
-            if login == user.nickname and password == user.password:
+            if nickname == user.nickname and password == user.password:
                 self.current_user = user
 
     def register(self, nickname, password, age):
@@ -44,7 +44,7 @@ class UrTube:
                         if self.current_user.age < 18:
                             print('Вам нет 18 лет, пожалуйста покиньте страницу')
                         elif movie in video.title:
-                            for i in range(1, 11):
+                            for i in range(video.time_now, video.duration):
                                 print(i, end=' ')
                                 time.sleep(1)
                             print('Конец видео')
@@ -82,9 +82,10 @@ class User:
     def __hash__(self):
         return hash(self.password)
 
+
 ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
-v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
+v2 = Video('Для чего девушкам парень программист?', 10, time_now=3, adult_mode=True)
 
 # Добавление видео
 ur.add(v1, v2)
