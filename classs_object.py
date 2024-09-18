@@ -45,7 +45,7 @@ class UrTube:
                             print('Вам нет 18 лет, пожалуйста покиньте страницу')
                         elif movie in video.title:
                             for i in range(video.time_now, video.duration):
-                                print(i, end=' ')
+                                print(i + 1, end=' ')
                                 time.sleep(1)
                             print('Конец видео')
         else:
