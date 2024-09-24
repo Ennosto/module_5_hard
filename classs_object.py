@@ -2,9 +2,10 @@ import time
 
 
 class UrTube:
-    users = []
-    videos = []
-    current_user = None
+    def __init__(self, users=[], videos=[], current_user=None):
+        self.users = users
+        self.videos = videos
+        self.current_user = current_user
 
     def log_in(self, nickname, password):
         for user in self.users:
@@ -86,7 +87,7 @@ class User:
 
 ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
-v2 = Video('Для чего девушкам парень программист?', 10, time_now=3, adult_mode=True)
+v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
 
 # Добавление видео
 ur.add(v1, v2)
