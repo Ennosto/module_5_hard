@@ -50,6 +50,12 @@ class UrTube:
                                 print(i + 1, end=' ')
                                 time.sleep(1)
                             print('Конец видео')
+                    elif movie in video.title:
+                        for i in range(video.time_now, video.duration):
+                            print(i + 1, end=' ')
+                            time.sleep(1)
+                        print('Конец видео')
+
         else:
             print("Войдите в аккаунт, чтобы смотреть видео")
 
@@ -96,13 +102,12 @@ ur.add(v1, v2)
 print(ur.get_videos('лучший'))
 print(ur.get_videos('ПРОГ'))
 
-# Проверка на вход пользователя и возрастное ограничение
+#Проверка на вход пользователя и возрастное ограничение
 ur.watch_video('Для чего девушкам парень программист?')
 ur.register('vasya_pupkin', 'lolkekcheburek', 13)
 ur.watch_video('Для чего девушкам парень программист?')
 ur.register('urban_pythonist', 'iScX4vIJClb9YQavjAgF', 25)
 ur.watch_video('Для чего девушкам парень программист?')
-
 # Проверка входа в другой аккаунт
 ur.register('vasya_pupkin', 'F8098FM8fjm9jmi', 55)
 print(ur.current_user)
